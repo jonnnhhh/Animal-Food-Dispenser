@@ -26,8 +26,7 @@ Servo servo1,servo2;
 
 void dog_motor_movement(int dutyCycle_dog, int counterLimit_dog, int countResetFlag)
 {
-
-//TODO: get reset working, issue is that the counter continues the counting where it left and does not reset to zero. *********  
+ 
 //--------- Clock Divider -------------------------- 
   if(CLK_DIVIDER_COUNTER < CLK_DIVIDER_LIMIT)
        {
@@ -81,7 +80,6 @@ void cat_motor_movement(int dutyCycle_cat, int counterLimit_cat, int countResetF
           {
             counter_cat = 0;
             Serial.println("Cat food Released.");
-            //Serial.println(counterLimit_ca);
             servo1.write(dutyCycle_cat); //release food
             delay(1000);
             servo1.write(0); //stop food flow
